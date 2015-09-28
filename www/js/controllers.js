@@ -1,5 +1,5 @@
 angular.module('starter.controllers', [])
-.controller('MyTabCtrl',function($scope, $http, ApiEndpoint, Customer, Product) {
+.controller('BroadcastCtrl',function($scope, $http, ApiEndpoint, Customer, Product) {
 
   /*$http.get(ApiEndpoint.url+'/customer').then(function(resp){
     console.log('Success', resp);
@@ -57,7 +57,7 @@ angular.module('starter.controllers', [])
 
   $scope.signIn = function(user) {
     console.log('Sign-In', user);
-    $state.go('tab.mytab');
+    $state.go('tab.broadcast');
   };
 
 });
