@@ -1,17 +1,29 @@
 angular.module('starter.controllers', [])
-.controller('MyTabCtrl',function($scope, $http, ApiEndpoint) {
-  console.log('ApiEndpoint', ApiEndpoint);
-  console.log('API URL', ApiEndpoint.url);
-  $http.get(ApiEndpoint.url+'/customer').then(function(resp){
+.controller('MyTabCtrl',function($scope, $http, ApiEndpoint, Customer, Product) {
+
+  /*$http.get(ApiEndpoint.url+'/customer').then(function(resp){
     console.log('Success', resp);
   }, function(err){
     console.error('ERR', err);
-  })
+  });
   $http.get(ApiEndpoint.url+'/product').then(function(resp){
     console.log('Success', resp);
   }, function(err){
     console.error('ERR', err);
+  });*/
+  Customer.get(function(data) {
+    console.log(data);
+    console.log(data.meta);
+    console.log(data.objects);
+  }); 
+
+  Product.get(function(data){
+    console.log(data);
+    console.log(data.meta);
+    console.log(data.objects[0]);
   })
+
+//query() returns all the entries
 })
 
 .controller('DashCtrl', function($scope) {})

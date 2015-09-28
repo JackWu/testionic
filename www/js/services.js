@@ -1,4 +1,4 @@
-angular.module('starter.services', [])
+angular.module('starter.services', ['ngResource'])
 
 .factory('Chats', function() {
   // Might use a resource here that returns a JSON array
@@ -47,4 +47,12 @@ angular.module('starter.services', [])
       return null;
     }
   };
+})
+.factory('Customer', function($resource, ApiEndpoint){
+
+  return $resource(ApiEndpoint.url + '/customer');
+
+})
+.factory('Product', function($resource, ApiEndpoint){
+  return $resource(ApiEndpoint.url + '/product');
 });
