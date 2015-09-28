@@ -2,13 +2,12 @@ angular.module('starter.controllers', [])
 .controller('MyTabCtrl',function($scope, $http, ApiEndpoint) {
   console.log('ApiEndpoint', ApiEndpoint);
   console.log('API URL', ApiEndpoint.url);
-  $http.defaults.useXDomain = true;
-  console.log($http.defaults.headers.common['Accept']);
-  $http.defaults.headers.common['Host'] = 'techtrend.biz'
-  console.log($http.defaults.headers.common['Host']);
-  console.log($http.defaults.headers.common['Access-Control-Allow-Origin']);
-  //delete $http.defaults.headers.common['HOST'] = 'techtrend.biz';
   $http.get(ApiEndpoint.url+'/customer').then(function(resp){
+    console.log('Success', resp);
+  }, function(err){
+    console.error('ERR', err);
+  })
+  $http.get(ApiEndpoint.url+'/product').then(function(resp){
     console.log('Success', resp);
   }, function(err){
     console.error('ERR', err);
