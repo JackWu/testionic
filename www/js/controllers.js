@@ -10,18 +10,16 @@ angular.module('starter.controllers', [])
     console.log('Success', resp);
   }, function(err){
     console.error('ERR', err);
-  });
-  Customer.get(function(data) {
-    console.log(data);
-    console.log(data.meta);
-    console.log(data.objects);
+  });*/
+  var customer =   Customer.get(function(data){
+    $scope.customers = data.objects;
   });
 
-  Product.get(function(data){
-    console.log(data);
-    console.log(data.meta);
-    console.log(data.objects[0]);
-  })*/
+
+
+   Product.get(function(products){
+    $scope.products = products.objects;
+  });
 
 //query() returns all the entries
 })
@@ -39,6 +37,7 @@ angular.module('starter.controllers', [])
   //});
 
   $scope.chats = Chats.all();
+  console.log($scope.chats);
   $scope.remove = function(chat) {
     Chats.remove(chat);
   };

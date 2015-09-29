@@ -1,7 +1,9 @@
 <ion-view view-title="Broadcast">
   <ion-content>
     <ion-list>
-      This is a broadcast message.
+      <ion-item ng-repeat="customer in customers">
+        {{customer.email}}
+      </ion-item>
     </ion-list>
   </ion-content>
 </ion-view>

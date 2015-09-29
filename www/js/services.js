@@ -49,8 +49,8 @@ angular.module('starter.services', ['ngResource'])
   };
 })
 .factory('Customer', function($resource, ApiEndpoint){
+  return $resource(ApiEndpoint.url+'/customer');
 
-  return $resource(ApiEndpoint.url + '/customer');
 
 })
 .factory('Product', function($resource, ApiEndpoint){
